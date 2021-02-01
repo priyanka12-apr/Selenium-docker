@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3-alpine'
-                    args '-v $HOME/.m2:/root/.m2'--->volume mapping m2 folder maven will chk all jar selenium jar etc
+                    args '-v $HOME/.m2:/root/.m2'
                 }
             }
             steps {
@@ -15,7 +15,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                	app = docker.build("vinsdocker/selenium-docker-master")-->it will take dockerfile from project because project name is specified
+                	app = docker.build("priyanka12-apr/selenium-dockerr")
                 }
             }
         }
